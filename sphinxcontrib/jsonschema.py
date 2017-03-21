@@ -41,7 +41,7 @@ def resolve_all_refs(obj,root):
     obj=resolve_ref(obj,root)
     if isinstance(obj,(dict,OrderedDict)):
         return OrderedDict((k,resolve_all_refs(v,root)) for k,v in obj.items())
-    elif isinstance(current,(list,tuple)):
+    elif isinstance(obj,(list,tuple)):
         return [resolve_all_refs(e,root) for e in obj]
     else:
         return obj
