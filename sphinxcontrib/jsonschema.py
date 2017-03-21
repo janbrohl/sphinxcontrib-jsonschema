@@ -24,7 +24,7 @@ def is_ref(obj):
     return (isinstance(obj,(dict,OrderedDict)) and len(obj)==1 and isisnstance(obj.get("$ref",None),string_types))
 
 def resolve_ref(obj,root): 
-    if is_ref(obj)
+    if is_ref(obj):
         ref=obj["$ref"]
         parts=ref.split("/")
         if parts and parts[0]=="#": # only resolve ref in same document
